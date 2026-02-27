@@ -16,12 +16,14 @@
         <div class="container">
             <!-- This is a bit nasty, but it basically says be a column first, and on larger screens be a spaced out row -->
             <div class="header d-flex
-                        flex-column
-                        flex-md-row justify-content-md-between">
-                <a href="{{ site.base }}/" class="">
-                    <img src="{{ site.base }}/img/logo.png"
-                         srcset="{{ site.base }}/img/logo@2x.png 2x"
-                         alt="Awesome" id="logo">
+                    flex-column
+                    flex-md-row justify-content-md-between align-items-md-center">
+                        
+                <a href="{{ site.base }}/">
+                    <img src="{{ site.base }}/img/fiulogo.png"
+                            alt="FIU HCI Logo"
+                            id="logo">
+                        </a>
                 </a>
                 <ul class="nav nav-pills justify-content-center">
 
@@ -63,13 +65,9 @@
 
             {{ content }}
 
-            <div class="footer">
-                <p>
-                    <a href="http://dept.example.edu/">Illustrious Department</a>
-                    at the
-                    <a href="http://example.edu/">University of Example</a>
-                </p>
-            </div>
+            <a href="https://www.cis.fiu.edu/">Knight Foundation School of Computing and Information Sciences</a>
+            at
+            <a href="https://www.fiu.edu/">Florida International University</a>
 
         </div> <!-- /container -->
 
