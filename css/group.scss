@@ -14,6 +14,7 @@ body {
     padding-bottom: 10px;
     margin-bottom: 20px;
     text-align: center;
+    padding-top:25px;
 }
 
 .footer {
@@ -88,10 +89,13 @@ ul.news {
 
 section {
     margin-bottom: 2em;
+    margin-top: 2em;
 }
-
+section h2:first-of-type {
+    margin-top: 2rem;
+}
 .profile {
-    object-fit: cover; // makes sure it's cropped
+    object-fit: cover; 
 }
 
 .noprofile {
@@ -142,6 +146,59 @@ section {
 }
 
 svg {
-    // make the alignment just like img from bootstrap's reboot.scss
+   
     vertical-align: middle;
+}
+
+//Hero
+.hero {
+    background: url('../img/abstract.png') center center/cover no-repeat;
+    height: 75vh;
+    position: relative;
+    margin-left: calc(-50vw + 50%); 
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+  }
+  
+  .hero-overlay {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        to right,
+        rgba(0, 45, 98, 0.8),
+        rgba(0, 45, 98, 0.4)
+    );
+    padding: 0 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero .lead {
+    font-size: 1.25rem;
+  }
+
+
+
+section h2 {
+    margin-bottom: 1em;
+    font-weight: 600;
+    border-bottom: 2px solid $light-gray;
+    padding-bottom: 0.3em;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    margin: 0;
+    padding: 0;
 }
