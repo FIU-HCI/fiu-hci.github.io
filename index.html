@@ -36,6 +36,54 @@ role-tables:
     </div>
 </section>
     
+<section class="research-section">
+    <div class="container">
+        <h2 class="section-title">Our Research Focus</h2>
+
+        <div class="row text-center">
+
+            <div class="col-md-3 mb-4">
+                <div class="research-card">
+                    <img src="/img/brain.png" class="card-icon mb-3" />
+                    <h5>Human-Centered AI</h5>
+                    <p>Designing intelligent systems that prioritize human values and usability.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="research-card">
+                    <i class="fa fa-universal-access fa-2x mb-3"></i>
+                    <h5>Accessibility & Inclusion</h5>
+                    <p>Building inclusive technologies for diverse users and abilities.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="research-card">
+                    <i class="fa fa-heartbeat fa-2x mb-3"></i>
+                    <h5>Health & Wellbeing</h5>
+                    <p>Exploring how interactive systems support physical and mental health.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="research-card">
+                    <i class="fa fa-globe fa-2x mb-3"></i>
+                    <h5>XR & Immersive Tech</h5>
+                    <p>Designing immersive experiences using AR, VR, and emerging media.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ '/research.html' | relative_url }}" class="btn btn-primary btn-lg">
+                Explore Research
+            </a>
+        </div>
+    </div>
+</section>
+
 <section>
     <h2>News</h2>
     <ul class="news list-unstyled">
@@ -52,21 +100,6 @@ role-tables:
     {% endif %}
 </section>
 
-<section>
-    <h2>Research</h2>
-    <div class="card-columns">
-        {% comment %}
-        Sort the projects by date, putting those without dates last
-        {% endcomment %}
-        {% assign projects_by_date = site.projects | sort: 'last-updated', 'first' %}
-        {% assign projects_by_date = projects_by_date | reverse %}
-        {% for p in projects_by_date %}
-            {% if p.status != "inactive" %}
-                {% include project-card.html project=p %}
-            {% endif %}
-        {% endfor %}
-    </div>
-</section>
 
 <div id="people">
     <h2>People</h2>

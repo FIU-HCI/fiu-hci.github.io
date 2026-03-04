@@ -11,9 +11,9 @@ body {
 
 .header {
     border-bottom: 1px solid $light-gray;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     text-align: center;
-    padding-top:25px;
+    padding-top:5px;
 }
 
 .footer {
@@ -53,9 +53,9 @@ a > .fa {
 
 /* Group logo */
 #logo {
-    height: 40px;
+    height: 50px;
     width: auto;
-    margin: 2px 0 8px 0;
+    margin: 5px;
 }
 
 /* Front page news. */
@@ -231,4 +231,69 @@ section {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
+}
+
+.research-section {
+    padding: 20px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #081E3F;
+}
+
+//research
+.research-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.research-card i {
+    color: #B6862C;
+}
+
+.btn-primary {
+    background-color: #081E3F;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #B6862C;
+}
+
+.research-section .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.research-section .col-md-3 {
+    display: flex;
+    margin-bottom: 1.5rem; /* keeps spacing consistent */
+}
+
+.research-card {
+    flex: 1; /* fills the column height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* content at top */
+    text-align: center;
+    min-height: 250px; /* optional, ensures base height */
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto 15px auto;
+    image-rendering: auto; /* ensures smooth scaling */
 }
