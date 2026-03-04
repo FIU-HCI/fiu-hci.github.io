@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Code
+title: Contact Us
 ---
 This is an example of an additional page you could add to the site (and its navigation).
 
