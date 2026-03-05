@@ -5,16 +5,16 @@ notitle: true
 
 # groups of columns of {roles: list, width: num, image: bool}
 role-tables:
-- - roles: [faculty, postdoc, staff]
+- - roles: [faculty]       # only faculty
     width: 4
     image: true
-  - roles: [grad]
+  - roles: [grad]          # only grad
     width: 8
     image: true
-- - roles: [collab, ugrad, ugrad-alum]
+- - roles: [ugrad]         # only ugrad
     width: 5
     image: false
-  - roles: [alum]
+  - roles: [alum]          # keep alum
     width: 7
     image: false
 
@@ -36,7 +36,7 @@ role-tables:
     </div>
 </section>
     
-<section class="research-section">
+<section class="research-section py-5 bg-light">
     <div class="container">
         <h2 class="section-title">Our Research Focus</h2>
 
@@ -84,34 +84,53 @@ role-tables:
     </div>
 </section>
 
-<section>
-    <h2>News</h2>
-    <ul class="news list-unstyled">
-        {% for post in site.posts limit: site.front_page_news %}
-            {% include news-item.html item=post %}
+
+
+<section id="people" class="people-section">
+    <div class="container">
+        <h2 class="section-title text-center">Our Team</h2>
+    
+        {% for role-table in page.role-tables %}
+            <div class="row justify-content-between">
+                {% for role-column in role-table %}
+                    <div class="col-md-{{ role-column.width }}">
+                        {% for role in role-column.roles %}
+                            {% include role-people.html role=role image=role-column.image %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
         {% endfor %}
-    </ul>
-    {% assign numposts = site.posts | size %}
-    {% if numposts >= 1 %}
-        <p>
-            <span class="fa fa-fw fa-history"></span>
-            <a href="{{ site.base }}/blog.html">Older posts&hellip;</a>
-        </p>
-    {% endif %}
+    </div>
 </section>
 
+<!-- Upcoming Seminars -->
+<section id="seminars" class="seminar-section py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Upcoming Seminars</h2>
+        <p class="text-center text-muted">
+            This section is a work in progress. Seminar details will be added soon!
+        </p>
+    </div>
+</section>
 
-<div id="people">
-    <h2>People</h2>
-    {% for role-table in page.role-tables %}
-        <section class="people row justify-content-between">
-            {% for role-column in role-table %}
-                <div class="col-md-{{ role-column.width }}">
-                    {% for role in role-column.roles %}
-                        {% include role-people.html role=role image=role-column.image %}
-                    {% endfor %}
-                </div>
+<!-- News Section -->
+<section class="news-section">
+    <div class="container">
+        <h2 class="section-title">News</h2>
+
+        <ul class="news list-unstyled">
+            {% for post in site.posts limit: site.front_page_news %}
+                {% include news-item.html item=post %}
             {% endfor %}
-        </section>
-    {% endfor %}
-</div>
+        </ul>
+
+        {% assign numposts = site.posts | size %}
+        {% if numposts >= 1 %}
+        <p>
+            <span class="fa fa-fw fa-history"></span>
+            <a href="{{ site.base }}/blog.html">Older posts…</a>
+        </p>
+        {% endif %}
+    </div>
+</section>

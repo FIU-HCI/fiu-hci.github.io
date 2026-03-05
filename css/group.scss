@@ -297,3 +297,65 @@ section {
     margin: 0 auto 15px auto;
     image-rendering: auto; /* ensures smooth scaling */
 }
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.person-card {
+    text-align: center;
+}
+
+.person-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.person-role {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+#people {
+    margin-top: 80px;
+}
+
+#people h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.person {
+    margin-bottom: 18px;
+}
+
+.person-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bio {
+    font-size: 14px;
+    color: #666;
+}
+
+.people-section {
+    width: 100vw;      
+    margin-left: calc(-50vw + 50%);  
+}
+
+.seminar-section {
+    width: 100vw;     
+    margin-left: calc(-50vw + 50%); 
+}
+
+.research-section {
+    width: 100vw;     
+    margin-left: calc(-50vw + 50%); 
+}

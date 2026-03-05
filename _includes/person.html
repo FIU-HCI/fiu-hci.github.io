@@ -5,12 +5,21 @@
 
 Usage:
 
-{% for item in site.data.people %}
-    {% assign person = item[1] %}
-    {% if person.role == role.key %}
-        {% include person.html person=person image=true %}
-    {% endif %}
-{% endfor %}
+<div class="people-grid">
+
+    {% for person in site.people %}
+    
+        <div class="person-card">
+            <img src="{{ person.photo }}" alt="{{ person.name }}" class="person-photo">
+    
+            <h3>{{ person.name }}</h3>
+    
+            <p class="person-role">{{ person.role }}</p>
+        </div>
+    
+    {% endfor %}
+    
+    </div>
 
 Use the image parameter to include or not include an image.
 
