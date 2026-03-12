@@ -352,10 +352,32 @@ section {
 
 .seminar-section {
     width: 100vw;     
-    margin-left: calc(-50vw + 50%); 
+    margin-left: calc(-50vw + 50%);
+    padding: 70px 0; 
 }
 
 .research-section {
     width: 100vw;     
     margin-left: calc(-50vw + 50%); 
+}
+
+.seminar-description {
+    color: #555;
+    line-height: 1.6;
+}
+
+.seminar-calendar {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.seminar-placeholder {
+    margin-top: 15px;
+}
+
+.seminar-muted {
+    font-size: 0.9rem;
+    color: #777;
 }
