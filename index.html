@@ -182,20 +182,25 @@ role-tables:
 <!-- News Section -->
 <section class="news-section">
     <div class="container">
-        <h2 class="section-title">News</h2>
 
-        <ul class="news list-unstyled">
-            {% for post in site.posts limit: site.front_page_news %}
+        <h2 class="section-title text-center">News</h2>
+
+        <ul class="news-list list-unstyled">
+
+            {% for post in site.posts limit:4 %}
                 {% include news-item.html item=post %}
             {% endfor %}
+
         </ul>
 
         {% assign numposts = site.posts | size %}
-        {% if numposts >= 1 %}
-        <p>
-            <span class="fa fa-fw fa-history"></span>
-            <a href="{{ site.base }}/blog.html">Older posts…</a>
-        </p>
+        {% if numposts > 4 %}
+        <div class="text-center mt-4">
+            <a href="{{ site.base }}/blog.html" class="btn btn-primary">
+                View All News
+            </a>
+        </div>
         {% endif %}
+
     </div>
 </section>
