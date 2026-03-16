@@ -185,21 +185,30 @@ role-tables:
 
         <h2 class="section-title text-center">News</h2>
 
-        <ul class="news-list list-unstyled">
-
-            {% for post in site.posts limit:4 %}
-                {% include news-item.html item=post %}
-            {% endfor %}
-
-        </ul>
-
         {% assign numposts = site.posts | size %}
-        {% if numposts > 4 %}
-        <div class="text-center mt-4">
-            <a href="{{ site.base }}/blog.html" class="btn btn-primary">
-                View All News
-            </a>
-        </div>
+
+        {% if numposts == 0 %}
+            <ul class="news-placeholder">
+                <li>
+                    <span class="news-date">Coming Soon</span>
+                    <span class="news-text">News and updates from the FIU HCI Lab will appear here. Check back soon!</span>
+                </li>
+            </ul>
+        {% else %}
+            <ul class="news-list list-unstyled">
+                {% for post in site.posts limit:4 %}
+                    {% include news-item.html item=post %}
+                {% endfor %}
+            </ul>
+
+            {% if numposts > 4 %}
+            <div class="text-center mt-4">
+                <a href="{{ site.base }}/blog.html" class="btn btn-primary">
+                    View All News
+                </a>
+            </div>
+            {% endif %}
+
         {% endif %}
 
     </div>

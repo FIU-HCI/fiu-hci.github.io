@@ -64,13 +64,24 @@
 
             {{ content }}
 
-            <div class="footer mt-4">
-                <p>
-                    Knight Foundation School of Computing and Information Sciences<br>
-                    Florida International University
-                </p>
-            </div>
         </div> <!-- /container -->
+
+        <footer class="site-footer">
+            <div class="footer-gold-bar"></div>
+            
+                
+                <div class="footer-divider"></div>
+                <strong class="footer-lab-name">FIU Human-Computer Interaction Lab</strong>
+                <span class="footer-sub">
+                    Knight Foundation School of Computing and Information Sciences<br>
+                    Florida International University &middot; Miami, FL 33199
+                </span>
+                <span class="footer-copy">
+                    &copy; {{ 'now' | date: "%Y" }} FIU HCI Lab &middot;
+                    
+                </span>
+            </div>
+        </footer>
 
         <!-- Support retina images. -->
         <script type="text/javascript"
