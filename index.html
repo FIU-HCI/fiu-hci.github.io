@@ -181,9 +181,11 @@ role-tables:
 
 <!-- News Section -->
 <section class="news-section">
-    <div class="container">
+    <div class="container" style="padding-top: 0; padding-bottom: 0;">
 
-        <h2 class="section-title text-center">News</h2>
+        <div class="sh-label">Updates</div>
+        <div class="sh-title">Lab News</div>
+        <div class="sh-rule"></div>
 
         {% assign numposts = site.posts | size %}
 
@@ -208,7 +210,6 @@ role-tables:
                 </a>
             </div>
             {% endif %}
-
         {% endif %}
 
     </div>
