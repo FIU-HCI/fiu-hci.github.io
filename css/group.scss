@@ -162,36 +162,98 @@ svg {
 }
 
 //Hero
+// Hero
 .hero {
-    background: url('../img/abstract.png') center center/cover no-repeat;
+    background: url('../img/abstract.PNG') center center/cover no-repeat;
     height: 75vh;
+    min-height: 460px;
     position: relative;
-    margin-left: calc(-50vw + 50%); 
-    margin-right: calc(-50vw + 50%);
     width: 100vw;
-  }
-  
-  .hero-overlay {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
     background: linear-gradient(
-        to right,
-        rgba(0, 45, 98, 0.8),
-        rgba(0, 45, 98, 0.4)
+        135deg,
+        rgba(4, 15, 32, 0.95) 0%,
+        rgba(8, 30, 63, 0.85) 55%,
+        rgba(8, 30, 63, 0.70) 100%
     );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 0 1rem;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-  }
-  
-  .hero .lead {
-    font-size: 1.25rem;
-  }
+
+    // dot grid overlay — pure CSS
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            circle,
+            rgba(182, 134, 44, 0.12) 1px,
+            transparent 1px
+        );
+        background-size: 32px 32px;
+        pointer-events: none;
+    }
+}
+
+// gold top strip
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #B6862C, #D4A843, transparent);
+    z-index: 2;
+}
+
+.hero-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #D4A843;
+    display: block;
+    margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.hero-rule {
+    width: 44px;
+    height: 2px;
+    background: #B6862C;
+    border-radius: 1px;
+    margin: 0.6rem auto 1.2rem;
+}
+
+.hero .lead {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+    line-height: 1.9;
+    margin-bottom: 1.8rem;
+}
+
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
 
 
 
